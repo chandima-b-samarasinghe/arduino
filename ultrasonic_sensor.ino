@@ -18,7 +18,7 @@ void loop() {
  digitalWrite(TRIGPIN, LOW); delayMicroseconds(2); digitalWrite(TRIGPIN, HIGH); delayMicroseconds(10); digitalWrite(TRIGPIN, LOW);
  
  //distance calculation
- float distance=pulseIn(ECHOPIN,HIGH); //pulseIn() function return the time in miliseconds (the time for reach the echo), and assigned it to distance variable
+ float distance=pulseIn(ECHOPIN,HIGH); //pulseIn() function return the time in microsecs (the time for reach the echo), and assigned it to distance variable
  distance=distance/58.8235; //using simple math, 2*DISTANCE=(speed_of_sound)*(time_in_miliseconds)*10^(-6)*10^2; ==> DISTANCE=(340*distance)/10000; ==> DISTANCE=distance/58.8235;
  Serial.print(distance); //print the distance in serial monitor
  Serial.println(" cm");
